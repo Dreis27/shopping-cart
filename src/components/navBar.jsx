@@ -5,7 +5,7 @@ const NavBar = ({onLogo, onHome, onStore, onAbout, onCart, onLoupe}) => {
   return (
     <div className="navbar">
       <div className='navbar-left'>
-        <img onClick={onLogo}>LOGO</img>
+        <img onClick={onLogo}></img>
       </div>
       <div className='navbar-center'>
           <button onClick={onHome}>HOME</button>
@@ -17,6 +17,7 @@ const NavBar = ({onLogo, onHome, onStore, onAbout, onCart, onLoupe}) => {
           <button onClick={onCart}>🛒</button>
       </div>
     </div>
+
   );
 }
 
