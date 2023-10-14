@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     position: relative;
     margin-right: 20px;
     margin-left: 20px;
@@ -12,7 +12,7 @@
     height: 400px;
     overflow: hidden;
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
         url('./t-shirt.png');
     background-repeat: no-repeat;
     background-position: top center;

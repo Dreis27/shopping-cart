@@ -1,11 +1,12 @@
 import React from 'react';
 import "../styles/navBar.css"
+import logo from "../styles/logo.png"
 
 const NavBar = ({onLogo, onHome, onStore, onAbout, onCart, onLoupe}) => {
   return (
     <div className="navbar">
       <div className='navbar-left'>
-        <img onClick={onLogo}></img>
+        <img onClick={onLogo} src={logo} ></img>
       </div>
       <div className='navbar-center'>
           <button onClick={onHome}>HOME</button>
