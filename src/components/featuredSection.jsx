@@ -7,7 +7,7 @@ const FeaturedSection = () => {
       <div className="text-section">
         <p>TEXT TEXT TEXT</p>
         <p>TEXT TEXT TEXT</p>
-        <button>TEXT</button>
+        <button>Shop now</button>
       </div>
     </div>
   );
