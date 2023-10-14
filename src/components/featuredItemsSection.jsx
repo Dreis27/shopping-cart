@@ -1,4 +1,5 @@
 import React from 'react';
+import "../styles/featuredItemsSection.css"
 
 const FeaturedItems = () => {
   return (
