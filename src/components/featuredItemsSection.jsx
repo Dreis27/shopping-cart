@@ -11,7 +11,6 @@ const FeaturedItems = () => {
     fetch("https://fakestoreapi.com/products/category/men's clothing")
       .then(response => response.json())
       .then(data => {
-        const tShirts = data.filter(product => product.title.toLowerCase().includes(''));
         console.log(data); 
         setProducts(data);
         setLoading(false);
@@ -26,16 +25,20 @@ const FeaturedItems = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
+    <>
+    <h1 className='featured-products-heading'>Featured products</h1>
     <div className="product-list">
       {products.map(product => (
         <div key={product.id} className="product-item">
-          <img src={product.image} alt={product.title} width="100" />
-          <h3>{product.title}</h3>
-          <p>{product.description}</p>
-          <p>${product.price}</p>
+          <div className='product-image-container'><img src={product.image} alt={product.title} width="100" /></div>
+          <div className='product-info-container'>
+            <h3>{product.title}</h3>
+            <p>${product.price}</p>
+          </div>
         </div>
       ))}
     </div>
+    </>
   );
 };
 
