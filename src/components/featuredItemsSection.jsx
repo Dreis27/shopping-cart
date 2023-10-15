@@ -32,7 +32,7 @@ const FeaturedItems = () => {
         <div key={product.id} className="product-item">
           <div className='product-image-container'><img src={product.image} alt={product.title} width="100" /></div>
           <div className='product-info-container'>
-            <h3>{product.title}</h3>
+            <h3>{product.title.split(' ').slice(0, 3).join(' ')}</h3>
             <p>${product.price}</p>
           </div>
         </div>
