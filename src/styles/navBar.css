@@ -36,7 +36,8 @@ body{
 }
 
 
-.navbar button {
+.navbar button, 
+.navbar .icon {
     margin: 0 10px; 
     background-color: transparent;
     border: none;
@@ -49,8 +50,12 @@ body{
     border-radius: 5px; 
     position: relative;
 }
+.navbar .icon {
+    font-size: 25px;
+}
 
-.navbar button:hover {
+.navbar button:hover,
+.navbar .icon:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
