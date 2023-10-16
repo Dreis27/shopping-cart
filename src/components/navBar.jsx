@@ -18,7 +18,10 @@ const NavBar = ({onLogo, onHome, onStore, onAbout, onCart, onLoupe}) => {
       </div>
       <div className='navbar-right'>
           <FontAwesomeIcon className="icon" icon={faMagnifyingGlass} style={{color: "#ffffff",}} />
-          <FontAwesomeIcon className="icon" icon={faCartShopping} style={{color: "#ffffff",}} />
+        <div className="icon-badge-container">
+          <FontAwesomeIcon className="icon" icon={faCartShopping} style={{color: "#ffffff"}} />
+          <span className="cart-badge">0</span>
+        </div>
       </div>
     </div>
 
