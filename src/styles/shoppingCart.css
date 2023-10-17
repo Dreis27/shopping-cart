@@ -1,25 +1,24 @@
-/* Styles for the App or main content */
 .App {
     position: relative;
     width: 100%;
-    overflow-x: hidden; /* To prevent horizontal scrolling when cart is not visible */
+    overflow-x: hidden; 
 }
 
-/* Styles for the shopping cart */
+
 .shopping-cart {
-    position: fixed;  /* Fix the position to the viewport */
+    position: fixed; 
     top: 0;
     right: -400px;    /* Initially hide the cart by positioning it outside the viewport */
-    width: 400px;     /* Set a fixed width for the cart */
+    width: 20vw;   
     height: 100%;
     background-color: white;
-    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5); /* Give it a slight shadow for depth */
-    transition: right 0.3s; /* Animation for the slide effect */
-    overflow-y: auto; /* To allow vertical scrolling for long lists */
-    z-index: 1000; /* Ensuring the cart appears above all other content */
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5); 
+    transition: right 0.3s; 
+    overflow-y: auto; 
+    z-index: 10; 
 }
 
-/* State to show the cart */
+
 .show-cart {
     right: 0;  /* When this class is added, the cart will become visible by sliding from the right */
 }
