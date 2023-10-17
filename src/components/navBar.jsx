@@ -17,8 +17,8 @@ const NavBar = ({onLogo, onHome, onStore, onAbout, onCart, onLoupe}) => {
           <button onClick={onAbout}>ABOUT</button>
       </div>
       <div className='navbar-right'>
-          <FontAwesomeIcon className="icon" icon={faMagnifyingGlass} style={{color: "#ffffff",}} />
-        <div className="icon-badge-container">
+          <FontAwesomeIcon onClick={onLoupe} className="icon" icon={faMagnifyingGlass} style={{color: "#ffffff",}} />
+        <div className="icon-badge-container" onClick={onCart}>
           <FontAwesomeIcon className="icon" icon={faCartShopping} style={{color: "#ffffff"}} />
           <span className="cart-badge">0</span>
         </div>
