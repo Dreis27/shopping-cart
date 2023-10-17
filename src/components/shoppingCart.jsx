@@ -1,5 +1,7 @@
+import React, { useState } from 'react';
+import '../styles/shoppingCart.css';
 
-const ShoppingCart = () => {
+const ShoppingCart = ({isVisible, onToggle}) => {
 
     const items = [
         { id: 1, name: "Item 1", price: 10, quantity: 2 },
@@ -10,8 +12,9 @@ const ShoppingCart = () => {
     const totalPrice = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
     return (
-        <div className="shopping-cart">
+        <div className={`shopping-cart ${isVisible ? 'show-cart' : ''}`}>
             <h2>Your Cart</h2>
+            <button onClick={onToggle}>Toggle Cart</button>
             <ul>
                 {items.map(item => (
                     <li key={item.id}>
