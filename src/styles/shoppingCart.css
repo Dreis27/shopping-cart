@@ -1,23 +1,74 @@
 .App {
     position: relative;
     width: 100%;
+    font-family: 'Arial', sans-serif;
 }
 
 
 .shopping-cart {
     position: fixed; 
     top: 0;
-    right: -400px;    /* Initially hide the cart by positioning it outside the viewport */
-    width: 20vw;   
+    right: -600px; /* Initially hide the cart by positioning it outside the viewport */
+    width: 20vw; 
+    max-width: 600px;
     height: 100%;
-    background-color: white;
+    background-color: #2a2a2a;
     box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5); 
     transition: right 0.3s; 
     overflow-y: auto; 
     z-index: 10; 
+    padding: 2% 3%;
 }
 
 
 .show-cart {
     right: 0;  /* When this class is added, the cart will become visible by sliding from the right */
+}
+
+.shopping-cart h2 {
+    color: white;
+    border-bottom: 2px solid #5a5a5a;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.shopping-cart button {
+    padding: 8px 12px;
+    margin-top: 10px;
+    background-color: #5a5a5a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.shopping-cart button:hover {
+    background-color: #7d3dca;
+}
+
+.shopping-cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shopping-cart li {
+    padding: 10px 0;
+    border-bottom: 1px solid #5a5a5a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-cart span {
+    color: white;
+}
+
+.total-price {
+    margin-top: 20px;
+    color: white;
+}
+
+.total-price strong {
+    color: #7d3dca;
 }

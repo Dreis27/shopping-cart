@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from 'react';
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/shoppingCart.css';
 
 const ShoppingCart = ({isVisible, onToggle}) => {
@@ -34,7 +36,9 @@ const ShoppingCart = ({isVisible, onToggle}) => {
     return (
         <div ref={cartRef} className={`shopping-cart ${isVisible ? 'show-cart' : ''}`}>
             <h2>Your Cart</h2>
-            <button onClick={onToggle}>Toggle Cart</button>
+            <button className='close-btn' onClick={onToggle}>
+                <FontAwesomeIcon className="icon" icon={faXmark} style={{color: "#ffffff"}} />
+            </button>
             <ul>
                 {items.map(item => (
                     <li key={item.id}>
