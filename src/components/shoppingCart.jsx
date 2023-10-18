@@ -35,10 +35,12 @@ const ShoppingCart = ({isVisible, onToggle}) => {
 
     return (
         <div ref={cartRef} className={`shopping-cart ${isVisible ? 'show-cart' : ''}`}>
-            <h2>Your Cart</h2>
-            <button className='close-btn' onClick={onToggle}>
-                <FontAwesomeIcon className="icon" icon={faXmark} style={{color: "#ffffff"}} />
-            </button>
+            <div className='cart-header'>
+                <h2>Your Cart</h2>
+                <button className='close-btn' onClick={onToggle}>
+                    <FontAwesomeIcon className="icon" icon={faXmark} style={{color: "#ffffff"}} />
+                </button>
+            </div>
             <ul>
                 {items.map(item => (
                     <li key={item.id}>

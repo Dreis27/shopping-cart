@@ -72,3 +72,21 @@
 .total-price strong {
     color: #7d3dca;
 }
+
+.close-btn {
+    cursor: pointer;
+    color: gray;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: transparent; 
+    border: none;
+    transition: color 0.3s;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px;
+}
+
