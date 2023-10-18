@@ -1,4 +1,4 @@
-
+import React, { useRef, useEffect } from 'react';
 import '../styles/shoppingCart.css';
 
 const ShoppingCart = ({isVisible, onToggle}) => {
@@ -8,11 +8,31 @@ const ShoppingCart = ({isVisible, onToggle}) => {
         { id: 2, name: "Item 2", price: 20, quantity: 1 }
     ];
 
+    const cartRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Check if the click is outside the cart
+            if (cartRef.current && !cartRef.current.contains(event.target)) {
+                onToggle();
+            }
+        };
+
+        if (isVisible) {
+            document.addEventListener('click', handleClickOutside);
+        }
+
+        // Cleanup funct
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [isVisible]);
+
     // Calculate the total price for all items.
     const totalPrice = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
     return (
-        <div className={`shopping-cart ${isVisible ? 'show-cart' : ''}`}>
+        <div ref={cartRef} className={`shopping-cart ${isVisible ? 'show-cart' : ''}`}>
             <h2>Your Cart</h2>
             <button onClick={onToggle}>Toggle Cart</button>
             <ul>

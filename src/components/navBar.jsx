@@ -18,7 +18,7 @@ const NavBar = ({onLogo, onHome, onStore, onAbout, onCart, onLoupe}) => {
       </div>
       <div className='navbar-right'>
           <FontAwesomeIcon onClick={onLoupe} className="icon" icon={faMagnifyingGlass} style={{color: "#ffffff",}} />
-        <div className="icon-badge-container" onClick={onCart}>
+        <div className="icon-badge-container" onClick={(e) => { e.stopPropagation(); onCart(); }}>
           <FontAwesomeIcon className="icon" icon={faCartShopping} style={{color: "#ffffff"}} />
           <span className="cart-badge">0</span>
         </div>
