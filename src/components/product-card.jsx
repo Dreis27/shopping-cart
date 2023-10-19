@@ -32,3 +32,5 @@ const ProductCard = ({ productId, productImage, productTitle, productPrice}) => 
         </div>
     )
 }
+
+export default ProductCard;
