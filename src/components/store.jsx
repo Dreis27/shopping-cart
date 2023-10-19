@@ -24,6 +24,7 @@ const Store = () => {
 
       return (
         <>
+        
         <div className='store-title'>Shop</div>
         <div className='store-container'>
           {products.map(product => (
