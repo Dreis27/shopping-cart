@@ -36,7 +36,7 @@ body{
 }
 
 
-.navbar button, 
+.navbar .button-like, 
 .navbar .icon {
     margin: 0 10px; 
     background-color: transparent;
@@ -54,12 +54,12 @@ body{
     font-size: 25px;
 }
 
-.navbar button:hover,
+.navbar .button-like:hover,
 .navbar .icon:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.navbar-center button:not(:last-child)::after {
+.navbar-center .button-like:not(:last-child)::after {
     content: "";
     background-color: rgba(255, 255, 255, 0.5);
     height: 50%;
