@@ -5,6 +5,7 @@ import FeaturedSection from './components/featuredSection';
 import FeaturedItems from './components/featuredItemsSection';
 import ShoppingCart from './components/shoppingCart';
 import Store from './components/store';
+import About from './components/about'
 import './App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <FeaturedSection />
             <FeaturedItems />
           </>} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>
