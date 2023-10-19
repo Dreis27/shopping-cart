@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ProductCard from './product-card';
+import Loading from './loading';
 
 const Store = () => {
     const [products, setProducts] = useState([]);
@@ -19,7 +20,7 @@ const Store = () => {
           });
       }, []);
 
-      if (loading) return <p>Loading...</p>;
+      if (loading) return <Loading/>;
       if (error) return <p>Error: {error}</p>;
 
       return (

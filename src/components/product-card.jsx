@@ -25,8 +25,9 @@ const ProductCard = ({ productId, productImage, productTitle, productPrice}) => 
                     </div>
                     :
                     <div>
-                        <button onClick={setWantsToAddToCart(true)}><FontAwesomeIcon icon={faCartShopping} style={{color: "#ffffff"}} />ADD TO CART</button>
+                        <button onClick={() => setWantsToAddToCart(true)}><FontAwesomeIcon icon={faCartShopping} style={{color: "#ffffff"}} />ADD TO CART</button>
                     </div>
+                    
                 }
             </div>
         </div>

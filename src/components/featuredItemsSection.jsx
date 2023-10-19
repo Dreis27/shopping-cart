@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import "../styles/featuredItemsSection.css"
+import Loading from './loading';
 
 const FeaturedItems = () => {
   const [products, setProducts] = useState([]);
@@ -21,7 +22,7 @@ const FeaturedItems = () => {
       });
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error: {error}</p>;
 
   return (
