@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import '../styles/product-card.css'
 
 const ProductCard = ({ productId, productImage, productTitle, productPrice}) => {
     const [wantsToAddToCart, setWantsToAddToCart] = useState(false);
