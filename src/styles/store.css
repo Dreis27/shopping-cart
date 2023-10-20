@@ -1,0 +1,16 @@
+.store-title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: 600;
+}
+
+.store-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    padding: 0 20px;
+}

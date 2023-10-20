@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import ProductCard from './product-card';
 import Loading from './loading';
+import '../styles/store.css';
 
 const Store = () => {
     const [products, setProducts] = useState([]);
