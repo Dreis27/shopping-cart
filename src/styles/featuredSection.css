@@ -32,7 +32,8 @@
     font-size: 30px;
 }
 
-.text-section button {
+.button-on-image {
+    display: flex;
     background-color: rgb(16, 16, 150);
     width: 200px;
     height: 85px;
@@ -40,9 +41,17 @@
     color: white;
     border: none;
     margin-top: 10vh;
-    
-    font-size: 3dvh;
-    
+    justify-content: center;
+    align-items: center; 
+    font-size: 3.3dvh;
+
     box-shadow: 0px 0px 10px 5px rgba(255,255,255,0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.button-on-image:hover {
+    background-color: rgb(36, 36, 170); 
+    box-shadow: 0px 0px 12px 6px rgba(255,255,255,0.5);
+    transform: scale(1.05);
 }
 

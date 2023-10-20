@@ -13,7 +13,7 @@ const ProductCard = ({ productId, productImage, productTitle, productPrice}) => 
                 <img src={productImage} alt={productTitle} />
                 <div className='product-card-details'>
                     <p>{productTitle}</p>
-                    <p>{productPrice}</p>
+                    <p>{productPrice} $</p>
                 </div>
             </div>
             <div className='add-to-cart-container'>
