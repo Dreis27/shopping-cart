@@ -31,7 +31,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <ShoppingCart isVisible={isCartVisible} onToggle={toggleCart} />
+        <ShoppingCart isVisible={isCartVisible} onToggle={toggleCart} cartItems={cartItems}/>
         <NavBar onCart={toggleCart} />
 
         <Routes>

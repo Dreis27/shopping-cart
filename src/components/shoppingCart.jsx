@@ -2,9 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/shoppingCart.css';
-import items from '../path/to/your/items';
 
-const ShoppingCart = ({isVisible, onToggle}) => {
+const ShoppingCart = ({isVisible, onToggle, cartItems}) => {
 
     const cartRef = useRef(null);
 
@@ -27,7 +26,7 @@ const ShoppingCart = ({isVisible, onToggle}) => {
     }, [isVisible]);
 
     // Calculate the total price for all items.
-    const totalPrice = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
     return (
         <div ref={cartRef} className={`shopping-cart ${isVisible ? 'show-cart' : ''}`}>
@@ -38,7 +37,7 @@ const ShoppingCart = ({isVisible, onToggle}) => {
                 </button>
             </div>
             <ul>
-                {items.map(item => (
+                {cartItems.map(item => (
                     <li key={item.id}>
                         <span>{item.name}</span>
                         <span>Price: ${item.price}</span>
