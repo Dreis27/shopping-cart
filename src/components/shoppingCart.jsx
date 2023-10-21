@@ -2,13 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/shoppingCart.css';
+import items from '../path/to/your/items';
 
 const ShoppingCart = ({isVisible, onToggle}) => {
-
-    const items = [
-        { id: 1, name: "Item 1", price: 10, quantity: 2 },
-        { id: 2, name: "Item 2", price: 20, quantity: 1 }
-    ];
 
     const cartRef = useRef(null);
 

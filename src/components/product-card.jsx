@@ -3,9 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import '../styles/product-card.css'
 
-const ProductCard = ({ productId, productImage, productTitle, productPrice}) => {
+const ProductCard = ({ productId, productImage, productTitle, productPrice, addToCart}) => {
     const [wantsToAddToCart, setWantsToAddToCart] = useState(false);
     const [numberOfItems, setNumberOfItems] = useState(0);
+
+    const handleAddToCart = () => {
+        addToCart({
+          id: productId,
+          name: productTitle,
+          price: productPrice,
+          quantity: numberOfItems
+        });
+        setWantsToAddToCart(true);
+      }
 
     return (
         <div key={productId} className='product-card'>
@@ -20,13 +30,13 @@ const ProductCard = ({ productId, productImage, productTitle, productPrice}) => 
             {
                     wantsToAddToCart ? 
                     <div> 
-                        <button onClick={() => setNumberOfItems(prevNumber => prevNumber > 0 ? prevNumber - 1 : 0)}>-</button>
+                        <button className='minus-to-cart'onClick={() => setNumberOfItems(prevNumber => prevNumber > 0 ? prevNumber - 1 : 0)}>-</button>
                         <div>{numberOfItems}</div>
-                        <button onClick={() => setNumberOfItems(prevNumber => prevNumber + 1)}>+</button> 
+                        <button className='plus-to-cart' onClick={() => setNumberOfItems(prevNumber => prevNumber + 1)}>+</button> 
                     </div>
                     :
                     <div>
-                        <button onClick={() => setWantsToAddToCart(true)}><FontAwesomeIcon icon={faCartShopping} style={{color: "#ffffff"}} />ADD TO CART</button>
+                        <button className='add-to-cart-button' onClick={handleAddToCart}><FontAwesomeIcon icon={faCartShopping} style={{color: "#ffffff"}} /> ADD TO CART</button>
                     </div>
                     
                 }
