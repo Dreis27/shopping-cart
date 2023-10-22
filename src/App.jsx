@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import NavBar from './components/navBar';
 import FeaturedSection from './components/featuredSection';
@@ -10,7 +10,17 @@ import './App.css';
 
 function App() {
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+
+  // Get carItems from local storage
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCartItems = localStorage.getItem('cartItems');
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
+
+  // Save carItems whenever it changes
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (product) => {
     setCartItems(prevItems => {
@@ -45,7 +55,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <ShoppingCart isVisible={isCartVisible} onToggle={toggleCart} cartItems={cartItems}/>
+        <ShoppingCart isVisible={isCartVisible} onToggle={toggleCart} cartItems={cartItems} removeItem={removeFromCart}/>
         <NavBar onCart={toggleCart} />
 
         <Routes>

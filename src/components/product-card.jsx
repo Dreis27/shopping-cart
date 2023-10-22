@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import '../styles/product-card.css'
 
-const ProductCard = ({ productId, productImage, productTitle, productPrice, addToCart, removeFromCart}) => {
+const ProductCard = ({ productId, productImage, productTitle, productPrice, addToCart, removeFromCart, cartItems}) => {
     const [numberOfItems, setNumberOfItems] = useState(0);
+
+    useEffect(() => {
+        const itemInCart = cartItems.find(item => item.id === productId);
+        setNumberOfItems(itemInCart ? itemInCart.quantity : 0);
+    }, [cartItems, productId]);
 
     const handleAddToCart = () => {
         addToCart({

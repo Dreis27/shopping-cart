@@ -38,6 +38,7 @@ const Store = ({ cartItems, addToCart, removeFromCart }) => {
               productPrice={product.price}
               addToCart={() => addToCart(product)}
               removeFromCart={() => removeFromCart(product.id)}
+              cartItems={cartItems}
             />
           ))}
         </div>
