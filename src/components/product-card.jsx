@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import '../styles/product-card.css'
 
-const ProductCard = ({ productId, productImage, productTitle, productPrice, addToCart}) => {
-    const [wantsToAddToCart, setWantsToAddToCart] = useState(false);
+const ProductCard = ({ productId, productImage, productTitle, productPrice, addToCart, removeFromCart}) => {
     const [numberOfItems, setNumberOfItems] = useState(0);
 
     const handleAddToCart = () => {
@@ -14,8 +13,13 @@ const ProductCard = ({ productId, productImage, productTitle, productPrice, addT
           price: productPrice,
           quantity: numberOfItems
         });
-        setWantsToAddToCart(true);
+        setNumberOfItems(prevNumber => prevNumber + 1);
       }
+
+    const handleMinus = () => {
+        removeFromCart(productId);
+        setNumberOfItems(prevNumber => prevNumber > 0 ? prevNumber - 1 : 0);
+    }
 
     return (
         <div key={productId} className='product-card'>
@@ -28,11 +32,11 @@ const ProductCard = ({ productId, productImage, productTitle, productPrice, addT
             </div>
             <div className='add-to-cart-container'>
             {
-                    wantsToAddToCart ? 
+                    (numberOfItems !== 0) ? 
                     <div> 
-                        <button className='minus-to-cart'onClick={() => setNumberOfItems(prevNumber => prevNumber > 0 ? prevNumber - 1 : 0)}>-</button>
+                        <button className='minus-to-cart'onClick={handleMinus}>-</button>
                         <div>{numberOfItems}</div>
-                        <button className='plus-to-cart' onClick={() => setNumberOfItems(prevNumber => prevNumber + 1)}>+</button> 
+                        <button className='plus-to-cart' onClick={handleAddToCart}>+</button> 
                     </div>
                     :
                     <div>

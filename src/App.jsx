@@ -24,6 +24,20 @@ function App() {
     });
   };
 
+  const removeFromCart = (productId) => {
+    setCartItems(prevItems => {
+      const existingItem = prevItems.find(item => item.id === productId);
+      if (!existingItem) return prevItems;
+      if (existingItem.quantity > 1) {
+        return prevItems.map(item => 
+          item.id === productId? {...item, quantity: item.quantity - 1} : item
+          );
+      } else {
+        return prevItems.filter(item => item.id !== productId);
+      }
+    })
+  }
+
   const toggleCart = () => {
     setIsCartVisible(prevState => !prevState);
   };
@@ -35,7 +49,7 @@ function App() {
         <NavBar onCart={toggleCart} />
 
         <Routes>
-          <Route path="/store" element={<Store cartItems={cartItems} addToCart={addToCart}/>} />
+          <Route path="/store" element={<Store cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart}/>} />
           <Route path="/" element={<>
             <FeaturedSection />
             <FeaturedItems />
