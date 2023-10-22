@@ -56,7 +56,7 @@ function App() {
     <Router>
       <div className="App">
         <ShoppingCart isVisible={isCartVisible} onToggle={toggleCart} cartItems={cartItems} removeItem={removeFromCart}/>
-        <NavBar onCart={toggleCart} />
+        <NavBar onCart={toggleCart} cartItems={cartItems}/>
 
         <Routes>
           <Route path="/store" element={<Store cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart}/>} />

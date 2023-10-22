@@ -6,7 +6,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
-const NavBar = ({onLogo, onHome, onStore, onAbout, onCart, onLoupe}) => {
+const NavBar = ({onLogo, onCart, onLoupe, cartItems}) => {
   return (
     <div className="navbar">
       <div className='navbar-left'>
@@ -21,7 +21,7 @@ const NavBar = ({onLogo, onHome, onStore, onAbout, onCart, onLoupe}) => {
           <FontAwesomeIcon onClick={onLoupe} className="icon" icon={faMagnifyingGlass} style={{color: "#ffffff",}} />
         <div className="icon-badge-container" onClick={(e) => { e.stopPropagation(); onCart(); }}>
           <FontAwesomeIcon className="icon" icon={faCartShopping} style={{color: "#ffffff"}} />
-          <span className="cart-badge">0</span>
+          <span className="cart-badge">{cartItems.length}</span>
         </div>
       </div>
     </div>
