@@ -39,10 +39,11 @@ const ShoppingCart = ({isVisible, onToggle, cartItems, removeItem}) => {
             <ul>
                 {cartItems.map(item => (
                     <li key={item.id}>
+                        <img className='cart-item-icon' src={item.image} alt={item.name} />
                         <span>{item.name}</span>
                         <span>Price: ${item.price}</span>
                         <span>Quantity: {item.quantity}</span>
-                        <button onClick={() => console.log(`Remove item ${item.id}`)}>Remove</button>
+                        <button onClick={() => removeItem(item.id)}>Remove</button>
                     </li>
                 ))}
             </ul>
