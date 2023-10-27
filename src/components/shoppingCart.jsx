@@ -43,7 +43,7 @@ const ShoppingCart = ({isVisible, onToggle, cartItems, removeItem}) => {
                         <span>{item.name}</span>
                         <span>Price: ${item.price}</span>
                         <span>Quantity: {item.quantity}</span>
-                        <button onClick={() => removeItem(item.id)}>Remove</button>
+                        <button className='remove-button' onClick={() => removeItem(item.id)}>Remove</button>
                     </li>
                 ))}
             </ul>
