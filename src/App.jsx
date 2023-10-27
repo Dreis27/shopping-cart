@@ -5,7 +5,8 @@ import FeaturedSection from './components/featuredSection';
 import FeaturedItems from './components/featuredItemsSection';
 import ShoppingCart from './components/shoppingCart';
 import Store from './components/store';
-import About from './components/about'
+import About from './components/about';
+import Footer from './components/footer';
 import './App.css';
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
         </Routes>
 
       </div>
+      <Footer/>
     </Router>
   );
 }
