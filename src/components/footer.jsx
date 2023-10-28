@@ -6,13 +6,13 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section about">
-          <h1 className="logo-text">ClothingStore</h1>
+          <h1 className="logo-text">WearHouse</h1>
           <p>
-            ClothingStore is a premium clothing line that offers a wide range of high-quality fashion for all occasions. Explore our collection and find your perfect outfit today.
+            WearHouse is a premium clothing line that offers a wide range of high-quality fashion for all occasions. Explore our collection and find your perfect outfit today.
           </p>
           <div className="contact">
             <span><i className="fas fa-phone"></i> &nbsp; 123-456-7890</span>
-            <span><i className="fas fa-envelope"></i> &nbsp; info@clothingstore.com</span>
+            <span><i className="fas fa-envelope"></i> &nbsp; info@wearhouse.com</span>
           </div>
 
         </div>
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; clothingstore.com | Designed by YourName
+        &copy; Designed by Dreis27
       </div>
     </footer>
   );

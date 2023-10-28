@@ -1,8 +1,15 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .footer {
     background-color: #111;
     color: #fff;
     text-align: left;
-    padding: 10px 20px;
+    padding: 10px 0px;
+    margin-top: 15vh;
   }
   
   .footer .footer-content {
@@ -11,8 +18,9 @@
   }
   
   .footer .footer-section {
-    flex: 1;
     padding: 20px;
+    margin-right: 10vw;
+    margin-left: 5vw;
   }
   
   .footer .logo-text {
@@ -23,6 +31,10 @@
   .footer .footer-section h2 {
     font-size: 1.2em;
     margin-bottom: 10px;
+  }
+
+  .footer .contact {
+    margin-top: 7vh;
   }
   
   .footer .footer-section a {
@@ -35,32 +47,15 @@
     color: #fff;
   }
   
-  .footer .footer-section ul {
-    list-style-type: none;
-  }
-  
   .footer .footer-section li {
     margin-bottom: 10px;
-  }
-  
-  .footer .contact-form .btn {
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    padding: 10px 15px;
-    border: none;
-    font-size: 0.9em;
-  }
-  
-  .footer .contact-form .btn:hover {
-    background-color: #555;
   }
   
   .footer .footer-bottom {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 5px 20px;
+    padding: 5px 0px;
     position: relative;
     bottom: 0;
     width: 100%;
