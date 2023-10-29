@@ -1,11 +1,15 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
 
 .footer {
     background-color: #111;
     color: #fff;
     text-align: left;
-    padding: 10px 0px;
-    margin-top: 15vh;
+    position: relative;
     margin-bottom: 0;
+    margin-top: 10vh;
 }
   
   .footer .footer-content {
@@ -53,7 +57,7 @@
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 5px 0px;
+    padding: 2px 0px;
     position: relative;
     bottom: 0;
     width: 100%;

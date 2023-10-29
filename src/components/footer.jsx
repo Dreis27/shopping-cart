@@ -37,7 +37,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p>Designed by Dreis27</p>
-        <FontAwesomeIcon onClick={handleClick} className="fa-github" icon={faGithub} style={{color: "white", margin: "10px", fontSize: "24px"}} />
+        <FontAwesomeIcon onClick={handleClick} className="fa-github" icon={faGithub} style={{color: "white", margin: "1vh", fontSize: "24px"}} />
       </div>
     </footer>
   );
