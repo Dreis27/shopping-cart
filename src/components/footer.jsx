@@ -1,7 +1,14 @@
 import React from 'react';
 import '../styles/footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
+
+  const handleClick = () => {
+    window.location.href = 'https://github.com/Dreis27';
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -29,7 +36,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; Designed by Dreis27
+        <p>Designed by Dreis27</p>
+        <FontAwesomeIcon onClick={handleClick} className="fa-github" icon={faGithub} style={{color: "white", margin: "10px", fontSize: "24px"}} />
       </div>
     </footer>
   );
